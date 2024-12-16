@@ -1,0 +1,1 @@
+document.addEventListener("click",function(e){let t;(t=e.target.closest(".onc"))?window.location.href=`/view_post.php?post_id=${encodeURIComponent(t.id)}`:(t=e.target.closest(".comment"))&&(window.location.href=`/view_post.php?post_id=${encodeURIComponent(t.id)}#comments`)});
