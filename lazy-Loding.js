@@ -1,1 +1,53 @@
-document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll('img[loading="lazy"]'),t=(e,t)=>{e.forEach(e=>{if(e.isIntersecting){const t=e.target;t.src=t.dataset.src,t.onload=()=>t.classList.add("loaded"),t.removeAttribute("loading"),t.observer.unobserve(t)}})},o=new IntersectionObserver(t,{root:null,rootMargin:"500px",threshold:.1});e.forEach(e=>o.observe(e));const r=new MutationObserver(e=>{e.forEach(e=>{e.addedNodes.forEach(e=>{1===e.nodeType&&"IMG"===e.tagName&&"lazy"===e.getAttribute("loading")&&o.observe(e)})})});r.observe(document.body,{childList:!0,subtree:!0});const n=(e,t)=>{e.forEach(e=>{if(e.isIntersecting){const t=e.target;t.style.backgroundImage=`url(${t.dataset.src})`,t.unobserve(t)}})},c=new IntersectionObserver(n,{root:null,rootMargin:"300px",threshold:.1});document.querySelectorAll(".ajustedBackground").forEach(e=>c.observe(e))});
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+
+    // IntersectionObserver options
+    const options = {
+        root: null, // Viewport as root
+        rootMargin: '1200px', // Load 300px before the image comes into view
+        threshold: 0.1, // Trigger at 10% visibility
+    };
+
+    // Lazy load function
+    const lazyLoad = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src; // Load the original image
+
+                // Add 'loaded' class after the image is loaded
+                img.onload = () => img.classList.add('loaded');
+
+                img.removeAttribute('loading');
+                observer.unobserve(img); // Stop observing the loaded image
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(lazyLoad, options);
+
+    // Observe all images
+    images.forEach(image => observer.observe(image));
+
+    // Support dynamically added content
+    const observerConfig = {
+        childList: true,
+        subtree: true,
+    };
+
+    const observerForDynamicContent = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (
+                    node.nodeType === 1 &&
+                    node.tagName === 'IMG' &&
+                    node.getAttribute('loading') === 'lazy'
+                ) {
+                    observer.observe(node);
+                }
+            });
+        });
+    });
+
+    observerForDynamicContent.observe(document.body, observerConfig);
+});
