@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // IntersectionObserver options
     const options = {
         root: null, // Viewport as root
-        rootMargin: '1200px', // Load 300px before the image comes into view
+        rootMargin: '0', // Load 300px before the image comes into view
         threshold: 0.1, // Trigger at 10% visibility
     };
 
