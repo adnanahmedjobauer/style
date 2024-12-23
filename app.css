@@ -147,7 +147,7 @@
 .home-section {
   height: 100vh;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), 
-              url('../images/Adnanahmed.webp') no-repeat center center/cover;
+              url('https://cdn.jsdelivr.net/gh/adnanahmedjobauer/style@main/Adnanahmed.webp') no-repeat center center/cover;
   position: relative;
   color: white;
 }
