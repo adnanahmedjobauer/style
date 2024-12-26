@@ -1,73 +1,146 @@
-.cover img {
+ .cover img{
    background: rgba(0,0,0,0.2);
    height: 15rem;
-   width: 100%;
-   object-fit: contain; /* To avoid cropping */
+   width:100%;
+   object-fit: cover;
    background-position: center;
    border-radius: 0 0 1rem 1rem;
+   }
+       
+ .cover{ 
+  height: 15rem;
+ }
+.camera{
+  position: relative;
+  top: -3.5rem;
+  left: 85%;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.2rem;
+  overflow: hidden;
+  
+}
+.cover_dismisse{
+  position: relative;
+  top: -6.5rem;
+  left:5%;
+  height: 3rem;
+  width: 3rem;
+  overflow: hidden;
+  
+}
+.camera input{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
 }
 
-.camera {
-   position: absolute; /* For proper overlay */
-   top: -3.5rem;
-   left: 85%;
-   height: 3rem;
-   width: 3rem;
-   font-size: 1.2rem;
+.ok_icon,.dismisse_btn{
+  font-size: 2rem;
+  
 }
-
-.cover_dismisse {
-   position: absolute;
-   top: -6.5rem;
-   left: 5%;
-   height: 3rem;
-   width: 3rem;
+.cover_dismisse,.ok_icon{
+  display: none
 }
+  
+    
+  .upload {
+      display: block;
+      height: 10rem;
+      width: 10rem;
+      object-fit: cover;
+      position: relative;
+      top: -10rem;
+      margin: 5rem auto;
+      
+    }
+    .cm {
+      position: relative;
+      top: -3.5rem;
+      left: 7rem;
+      height: 3rem;
+      width: 3rem;
+      overflow: hidden;   
+    }
 
-.upload {
-   display: block;
-   height: 10rem;
-   width: 10rem;
-   object-fit: cover;
-   margin: 5rem auto;
-   position: relative;
-   top: -10rem;
-   border-radius: 50%;
+   .action{
+     position: relative;
+     top:-7rem;
+     left: -1rem;
+     height: 3rem;
+     width: 3rem;
+     display: none;
+   }
+   .upload img{
+     height: 100%;
+     width:100%;
+     display: inline;
+     border-radius: 10rem; 
+     background-position: center;
+   }
+   
+   .ok{
+     display:none;    
+     font-size: 2rem;
+   }
+   .dismiss{
+    font-size:2rem
+   }
+    .cm input {
+      position: absolute;    
+      transform: scale(2);    
+      opacity: 0;   
+    } 
+   
+  
+    
+    .user_name {
+      margin-top: -14rem;
+    }
+    
+    .user_type {
+      margin-top: -0.5rem;
+     
+    }
+.user_bio{
+ margin: -2rem 0 -1rem 0;
 }
+    
 
-.user_name {
-   margin-top: -14rem;
-}
-
-.contact_item {
-   margin: 0.8rem;
-   font-size: 30px;
-   height: 3rem;
-   width: 3rem;
-   background: rgba(100,100,100,0.4);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
-}
-
-.contact_item .fa-facebook-f {
-   color: #7BD586;
-}
-
-.contact_item .fa-telegram-plane {
+    .contact_item {
+      margin: 0.8rem;
+      border-radius: 50%;
+      font-size: 30px;
+      height: 3rem;
+      width: 3rem;
+      background:rgba(100,100,100,0.4);
+      display: flex;
+      justify-content:center;
+     align-items: center;
+     cursor: pointer;
+    }
+ .contact_item  .fa-facebook-f{
+     color: #7BD586;
+     
+   }
+.contact_item .fa-telegram-plane{ 
    color: #1FCD35;
+ }
+.contact_item .fa-tiktok{
+  color: #69c9d0;
+}
+.contact_item .fa-phone{
+  color:#4CD55D;
+  
 }
 
-.contact_item .fa-tiktok {
-   color: #69c9d0;
-}
+      
+    .massage {
+      color: #69c9d0;
+      background: rgba(100,100,100,0.4);
+    }
+    
+     
 
-.contact_item .fa-phone {
-   color: #4CD55D;
-}
-
-.massage {
-   color: #69c9d0;
-   background: rgba(100,100,100,0.6);
-}
+    
+    
