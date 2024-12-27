@@ -5,6 +5,7 @@
    object-fit: cover;
    background-position: center;
    border-radius: 0 0 1rem 1rem;
+   display: block;
    }
        
  .cover{ 
@@ -52,7 +53,7 @@
       position: relative;
       top: -10rem;
       margin: 5rem auto;
-      
+      display: block;
     }
     .cm {
       position: relative;
@@ -77,6 +78,9 @@
      display: inline;
      border-radius: 10rem; 
      background-position: center;
+     display: block;
+     background: url("profile.jpeg") no-repeat center center fixed; 
+  background-size: cover;
    }
    
    .ok{
